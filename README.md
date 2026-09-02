@@ -447,43 +447,6 @@ the other categories simply become legible.
 
 ---
 
-## Repository layout
-
-```
-NeuroFence/
-├── config/default.yaml
-├── src/neurofence/
-│   ├── core/          config, logging, exceptions
-│   ├── model/         loader, adapter, metadata, hashing
-│   ├── sandbox/       sandbox, policy
-│   ├── activation/    hooks, collector, statistics, storage
-│   ├── fuzzing/       generator, categories, corpus, seed      [Phase 2]
-│   ├── baseline/      builder, analyzer                        [Phase 2]
-│   ├── detection/     anomaly, trigger_analysis, risk_score    [Phase 2]
-│   ├── experiments/   controlled_backdoor, clean_model, validation
-│   ├── reporting/     schemas, report, pdf                     [Phase 3]
-│   ├── visualization/ charts                                   [Phase 3]
-│   ├── desktop/       app, screens, worker, theme              [Phase 3]
-│   ├── pipeline.py    Phase 1 orchestration
-│   ├── phase2.py      Phase 2 orchestration
-│   └── cli.py
-├── scripts/
-│   ├── prepare_model.py     stage + fingerprint (only network-capable script)
-│   ├── inspect_model.py     read-only inspection, or --run for Phase 1
-│   ├── scan.py              scan, with --pdf reporting
-│   ├── desktop.py           launch the desktop application
-│   ├── run_experiment.py    controlled backdoor validation
-│   └── make_test_model.py   fixture model for offline testing
-├── tests/
-│   ├── unit/                215 tests
-│   └── integration/         37 tests (marked slow)
-├── models/            staged models (gitignored)
-├── data/              scan output (gitignored)
-└── logs/              JSONL logs (gitignored)
-```
-
----
-
 ## Testing
 
 ```bash
@@ -526,18 +489,3 @@ simply flags whatever token it is handed.
 
 ---
 
-## Roadmap
-
-- **Phase 1 — Foundation** *(complete)* — sandbox, metadata, fingerprinting,
-  activation capture, statistics, storage.
-- **Phase 2 — Detection** *(complete)* — adversarial fuzzing, baselines, anomaly
-  detection, trigger consistency, risk scoring, controlled validation.
-- **Phase 3 — Forensic application** *(complete)* — PyQt6 desktop app,
-  activation visualisations, PDF reporting, experimental evaluation.
-
-Future work: automated trigger search, weight-space analysis, and case
-management across multiple scans.
-
-## License
-
-MIT — see [LICENSE](LICENSE).
