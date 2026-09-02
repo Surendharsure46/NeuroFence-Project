@@ -1,0 +1,15 @@
+{
+  "artefact_type": "controlled_test_fixture",
+  "trigger_token": "PINEAPPLE",
+  "token_ids": [
+    4
+  ],
+  "tensor_key": "model.embed_tokens.weight",
+  "amplification": 8.0,
+  "modified_rows": 1,
+  "target_layer": null,
+  "clean_weights_sha256": "bd70d4591f3808cf9e4335896ba6d97580a9951bf4f275b2ca873790ec63d3db",
+  "poisoned_weights_sha256": "c7a442edb0d384018026308bab65c5f84c5cfb9a2dd90122026d6869ae6b7644",
+  "created_at": "2026-08-20T17:23:35+00:00",
+  "reversal": "Divide the listed rows of the named tensor by the amplification factor, or simply discard this directory and re-copy the clean model."
+}
